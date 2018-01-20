@@ -1,4 +1,4 @@
-FROM xataz/rtorrent-rutorrent
+FROM xataz/rtorrent-rutorrent:filebot
 
 ENV UID=1100 \
     GID=1100 \
