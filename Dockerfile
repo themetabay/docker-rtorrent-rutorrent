@@ -9,15 +9,12 @@ ENV UID=1100 \
 LABEL Description="rutorrent based on alpine" \
       tags="latest" \
       maintainer="xataz <https://github.com/xataz>" \
-      build_ver="2017120902"
 
-
-ENV FILEBOT_RENAME_METHOD="symlink" \
+ENV FILEBOT_RENAME_METHOD="move" \
     FILEBOT_RENAME_MOVIES="{n} ({y})" \
-    FILEBOT_RENAME_SERIES="{n}/Season {s.pad(2)}/{s00e00} - {t}" \
+    FILEBOT_RENAME_SERIES="{n}/Season {s}/{n} - {s00e00} - {t}" \
     FILEBOT_RENAME_ANIMES="{n}/{e.pad(3)} - {t}" \
     FILEBOT_RENAME_MUSICS="{n}/{fn}"
-
 
 VOLUME /data /config
 EXPOSE 8080 6881 5000
