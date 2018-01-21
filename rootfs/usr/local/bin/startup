@@ -84,7 +84,7 @@ fi
 
 
 sed -i -e 's|<PORT_RTORRENT>|'$PORT_RTORRENT'|g' -e 's|<DHT_RTORRENT>|'$DHT_RTORRENT'|g' /home/torrent/.rtorrent.rc
-sed -i -e 's|<rutorrent_port>>|'$RUTORRENT_WEB_PORT'|g' /etc/nginx/nginx.conf
+sed -i -e 's|<rutorrent_port>|'$RUTORRENT_WEB_PORT'|g' /etc/nginx/nginx.conf
 
 ## externalize rtorrent configuration
 if [ ! -e /config/rtorrent/.rtorrent.rc ]; then
