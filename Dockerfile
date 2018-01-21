@@ -12,8 +12,9 @@ ENV FILEBOT_RENAME_METHOD="move" \
     FILEBOT_RENAME_ANIMES="{n}/{e.pad(3)} - {t}" \
     FILEBOT_RENAME_MUSICS="{n}/{fn}"
 
+COPY rootfs /
 VOLUME /data /config
-EXPOSE 8080 6881 5000
+EXPOSE 5000
 
 RUN chmod +x /usr/local/bin/startup /etc/s6.d/*/* && \
     sed -i "s+chown -R torrent:torrent /data+chown -R torrent:torrent+" /usr/local/bin/startup
