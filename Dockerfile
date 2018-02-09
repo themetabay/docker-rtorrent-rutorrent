@@ -15,9 +15,3 @@ ENV FILEBOT_RENAME_METHOD="move" \
 COPY rootfs /
 VOLUME /data /config
 EXPOSE 5000
-
-RUN chmod +x /usr/local/bin/startup /etc/s6.d/*/* && \
-    sed -i "s+chown -R torrent:torrent /data+chown -R torrent:torrent+" /usr/local/bin/startup
-
-ENTRYPOINT ["/usr/local/bin/startup"]
-CMD ["/bin/s6-svscan", "/etc/s6.d"]
